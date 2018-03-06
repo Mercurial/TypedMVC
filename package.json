@@ -1,0 +1,28 @@
+{
+  "name": "typedmvc",
+  "version": "0.0.1",
+  "description": "Typescript Web MVC Framework built on-top of ExpressJS",
+  "main": "lib/TypedMVC.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mercurial/TypedMVC.git"
+  },
+  "author": "Clark Alesna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mercurial/TypedMVC/issues"
+  },
+  "homepage": "https://github.com/Mercurial/TypedMVC#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "moment": "^2.21.0",
+    "typescript": "^2.7.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.11.1",
+    "@types/moment": "^2.13.0"
+  }
+}
