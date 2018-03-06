@@ -1,6 +1,6 @@
 {
   "name": "typedmvc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Typescript Web MVC Framework built on-top of ExpressJS",
   "main": "lib/TypedMVC.js",
   "scripts": {
@@ -19,6 +19,7 @@
   "dependencies": {
     "express": "^4.16.2",
     "moment": "^2.21.0",
+    "tslib": "^1.9.0",
     "typescript": "^2.7.2"
   },
   "devDependencies": {
