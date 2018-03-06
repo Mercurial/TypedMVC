@@ -9,7 +9,7 @@
     // "jsx": "preserve",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
     "declaration": true,                   /* Generates corresponding '.d.ts' file. */
     "declarationDir": "./typings",
-    "sourceMap": true,                     /* Generates corresponding '.map' file. */
+    "sourceMap": false,                     /* Generates corresponding '.map' file. */
     // "outFile": "./",                       /* Concatenate and emit output to single file. */
     // "outDir": "./",                        /* Redirect output structure to the directory. */
     "outDir": "./lib",
