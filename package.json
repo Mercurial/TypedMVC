@@ -1,6 +1,6 @@
 {
   "name": "typedmvc",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Typescript Web MVC Framework built on-top of ExpressJS",
   "main": "./lib/TypedMVC.js",
   "types": "./typings/TypedMVC.d.ts",
