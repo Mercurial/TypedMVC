@@ -23,10 +23,9 @@ export class BaseController implements IController
 
     }
 
-    protected RegisterRoute(method:string, url: string, callback: any, role: number = Permissions.Public)
+    protected RegisterRoute(method:string, url: string, role: number = Permissions.Public, ...callbacks: Function[])
     {
-        (this.App as any)[method](`${this.Prefix}${this.BaseUrl}${url}`, callback);
-        
+        (this.App as any)[method](`${this.Prefix}${this.BaseUrl}${url}`, callbacks);
         this.RouteRoles.push({
             Route: `${this.Prefix}${this.BaseUrl}${url}`,
             Permission: role,
