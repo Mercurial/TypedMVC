@@ -1,8 +1,8 @@
 import * as express from 'express';
 import * as socketIo from 'socket.io';
 import ISocketController from '../Interfaces/ISocketController';
-import { Logger } from '../../typings/TypedMVC';
 import { CommonSocketEvents } from '../Events/CommonSocketEvents';
+import { Logger } from '../TypedMVC';
 
 export class SocketControllerManager
 {
