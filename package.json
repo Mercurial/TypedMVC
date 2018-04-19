@@ -1,6 +1,6 @@
 {
   "name": "typedmvc",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Typescript Web MVC Framework built on-top of ExpressJS",
   "main": "./lib/TypedMVC.js",
   "types": "./typings/TypedMVC.d.ts",
@@ -21,13 +21,13 @@
   "dependencies": {
     "@types/express": "^4.11.1",
     "@types/moment": "^2.13.0",
-    "@types/mongoose": "^5.0.6",
+    "@types/mongoose": "^5.0.10",
     "@types/socket.io": "^1.4.33",
-    "express": "^4.16.2",
-    "moment": "^2.21.0",
-    "mongoose": "^5.0.9",
+    "express": "^4.16.3",
+    "moment": "^2.22.1",
+    "mongoose": "^5.0.15",
     "socket.io": "^2.1.0",
     "tslib": "^1.9.0",
-    "typescript": "^2.7.2"
+    "typescript": "^2.8.1"
   }
 }
