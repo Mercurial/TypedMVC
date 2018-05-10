@@ -9,7 +9,7 @@ enum Permissions
     Admin
 }
 
-interface RouteRoles
+interface RouteRole
 {
     Route: string;
     Permission: Permissions;
@@ -21,8 +21,8 @@ interface IController
     App: express.Application;
     BaseUrl: string;
     Prefix: string;
-    RouteRoles: Array<RouteRoles>;
+    RouteRoles: Array<RouteRole>;
     Register():void;
 }
 
-export {Permissions, RouteRoles, IController}
+export {Permissions, RouteRole, IController}

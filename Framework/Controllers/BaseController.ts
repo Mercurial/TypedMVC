@@ -1,6 +1,6 @@
 import * as express from 'express';
 import {IController} from '../Interfaces/IController';
-import {RouteRoles, Permissions} from '../Interfaces/IController';
+import {RouteRole, Permissions} from '../Interfaces/IController';
 import {Logger} from '../Log/Logger';
 
 export class BaseController implements IController
@@ -8,14 +8,14 @@ export class BaseController implements IController
     App: express.Application;
     BaseUrl: string;
     Prefix: string;
-    RouteRoles: Array<RouteRoles>;
+    RouteRoles: Array<RouteRole>;
 
     constructor(app: express.Application)
     {
         this.App = app;
         this.BaseUrl = "";
         this.Prefix = "";
-        this.RouteRoles = new Array<RouteRoles>();
+        this.RouteRoles = new Array<RouteRole>();
     }
 
     Register()
@@ -25,12 +25,23 @@ export class BaseController implements IController
 
     protected RegisterRoute(method:string, url: string, role: number = Permissions.Public, ...callbacks: Function[])
     {
-        (this.App as any)[method](`${this.Prefix}${this.BaseUrl}${url}`, callbacks);
-        this.RouteRoles.push({
+        let routeRole = <RouteRole>{
             Route: `${this.Prefix}${this.BaseUrl}${url}`,
             Permission: role,
             Verb: method
-        });
+        };
+        (this.App as any)[method](`${this.Prefix}${this.BaseUrl}${url}`, (req: express.Request, res: express.Response, next: express.NextFunction)=>{
+            this.Middleware(routeRole, req, res, next);
+        }, callbacks);
+        this.RouteRoles.push(routeRole);
+    }
+
+    protected Middleware(RouteRole: RouteRole, req: express.Request, res: express.Response, next: express.NextFunction)
+    {
+        (req as any).typedmvc = {
+            RouteRole
+        };
+        next();
     }
 
 }
