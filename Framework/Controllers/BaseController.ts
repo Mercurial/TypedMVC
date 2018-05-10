@@ -30,18 +30,7 @@ export class BaseController implements IController
             Permission: role,
             Verb: method
         };
-        (this.App as any)[method](`${this.Prefix}${this.BaseUrl}${url}`, (req: express.Request, res: express.Response, next: express.NextFunction)=>{
-            this.Middleware(routeRole, req, res, next);
-        }, callbacks);
+        (this.App as any)[method](`${this.Prefix}${this.BaseUrl}${url}`, callbacks);
         this.RouteRoles.push(routeRole);
     }
-
-    protected Middleware(RouteRole: RouteRole, req: express.Request, res: express.Response, next: express.NextFunction)
-    {
-        (req as any).typedmvc = {
-            RouteRole
-        };
-        next();
-    }
-
 }
