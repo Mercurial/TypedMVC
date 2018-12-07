@@ -1,5 +1,4 @@
 import * as express from 'express';
-import * as socketIo from 'socket.io';
 import ISocketController from '../Interfaces/ISocketController';
 import { CommonSocketEvents } from '../Events/CommonSocketEvents';
 import { Logger } from '../TypedMVC';
@@ -23,7 +22,9 @@ export class SocketControllerManager
 
     private OnConnection(socket: SocketIO.Socket) : void
     {
-        // Logger.Log(`A User has connected: ${socket.client.id}`);
+        if (process.env.NODE_ENV != 'production')
+            Logger.Log(`A User has connected: ${socket.client.id}`);
+
         this.Sockets.push(socket);
         this.SocketControllers.map((controller, idx)=>
         {
@@ -38,7 +39,9 @@ export class SocketControllerManager
 
     private OnDisconnection = (socket: SocketIO.Socket) : void =>
     {
-        // Logger.Log(`A User has disconnected: ${socket.client.id}`);
+        if (process.env.NODE_ENV != 'production')
+            Logger.Log(`A User has disconnected: ${socket.client.id}`);
+
         this.Sockets.splice(this.Sockets.indexOf(socket), 1);
 
         this.SocketControllers.map((controller, idx)=>

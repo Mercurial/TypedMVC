@@ -1,7 +1,6 @@
 import * as express from 'express';
 import {IController} from '../Interfaces/IController';
 import {RouteRole, Permissions} from '../Interfaces/IController';
-import {Logger} from '../Log/Logger';
 
 export class BaseController implements IController
 {

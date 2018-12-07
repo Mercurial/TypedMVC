@@ -1,5 +1,3 @@
-import * as express from 'express';
-import * as socketIo from 'socket.io';
 import ISocketController from '../Interfaces/ISocketController';
 import { SocketControllerManager } from './SocketControllerManager';
 import { Logger } from '../TypedMVC';
@@ -16,7 +14,8 @@ export class BaseSocketController implements ISocketController
 
     AttachEvents(socket: SocketIO.Socket)
     {
-        // Logger.Log(`Chat Socket Events Attached`);
+        if (process.env.NODE_ENV != 'production')
+            Logger.Log(`Chat Socket Events Attached`);
     }
 
     OnConnection(socket: SocketIO.Socket):void
