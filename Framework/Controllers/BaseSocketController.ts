@@ -16,7 +16,7 @@ export class BaseSocketController implements ISocketController
 
     AttachEvents(socket: SocketIO.Socket)
     {
-        Logger.Log(`Chat Socket Events Attached`);
+        // Logger.Log(`Chat Socket Events Attached`);
     }
 
     OnConnection(socket: SocketIO.Socket):void

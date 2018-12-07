@@ -23,7 +23,7 @@ export class SocketControllerManager
 
     private OnConnection(socket: SocketIO.Socket) : void
     {
-        Logger.Log(`A User has connected: ${socket.client.id}`);
+        // Logger.Log(`A User has connected: ${socket.client.id}`);
         this.Sockets.push(socket);
         this.SocketControllers.map((controller, idx)=>
         {
@@ -38,7 +38,7 @@ export class SocketControllerManager
 
     private OnDisconnection = (socket: SocketIO.Socket) : void =>
     {
-        Logger.Log(`A User has disconnected: ${socket.client.id}`);
+        // Logger.Log(`A User has disconnected: ${socket.client.id}`);
         this.Sockets.splice(this.Sockets.indexOf(socket), 1);
 
         this.SocketControllers.map((controller, idx)=>
