@@ -1,7 +1,6 @@
 import * as express from 'express';
 
-enum Permissions
-{
+enum Permissions {
     Public,
     Self,
     UserReadOnly,
@@ -9,20 +8,18 @@ enum Permissions
     Admin
 }
 
-interface RouteRole
-{
+interface RouteRole {
     Route: string;
     Permission: Permissions;
     Verb: string;
 }
 
-interface IController
-{
+interface IController {
     App: express.Application;
     BaseUrl: string;
     Prefix: string;
     RouteRoles: Array<RouteRole>;
-    Register():void;
+    Register(): void;
 }
 
-export {Permissions, RouteRole, IController}
+export {Permissions, RouteRole, IController};

@@ -1,0 +1,20 @@
+{
+    "extends": "tslint:recommended",
+    "defaultSeverity": "warning",
+    "rules": {
+        "ban-types": false,
+        "array-type": false,
+        "comment-format": false,
+        "eofline": false,
+        "interface-name": false,
+        "member-access": false,
+        "member-ordering": false,
+        "no-console": false,
+        "no-empty": false,
+        "object-literal-sort-keys": false,
+        "ordered-imports": false,
+        "quotemark": false,
+        "trailing-comma": false,
+        "variable-name": [true, "check-format", "allow-leading-underscore", "allow-pascal-case", "allow-snake-case", "ban-keywords"]
+    }
+}
