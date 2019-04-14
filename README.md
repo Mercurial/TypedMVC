@@ -2,4 +2,9 @@
 Typescript Web MVC Framework built on-top of ExpressJS
 
 **Install**
-`npm i typedmvc`
+
+`yarn add typedmvc`
+
+or
+
+`npm install --save typedmvc`
